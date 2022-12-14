@@ -2,12 +2,18 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 
+function getTitle(title) {
+  return title;
+}
+
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div>
       <h1>Hello React</h1>
+
+      <label htmlFor="search">Search: </label>
+      <input id="search" type="text" />
     </div>
   );
 }
