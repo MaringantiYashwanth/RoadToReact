@@ -33,22 +33,17 @@ const App = () => {
 };
 
 const Search = () => {
-  // perform a task in between
-
-  const handleChange = (event) => { // After opening your application in a web browser, 
-    // open the browser’s developer tools “Console”-tab to see the logging occur after 
-    // you type into the input field. What
-     // you see is called a synthetic event as a JavaScript object 
-     // and the input field’s internal value
-    // synthetic event
-    console.log(event);
-    // value of target (here: input HTML element)
-    console.log(event.target.value);
+  const [searchTerm, setSearchTerm] = React.useState();
+  const handleChange = (event) => { 
+    setSearchTerm(event.target.value);
   };
   return (
   <div>
     <label htmlFor="search">Search: </label>
     <input id="search" type="text" onChange={handleChange}/>
+    <p>
+      Searching for <strong>{searchTerm}</strong>
+    </p>
   </div>
   );
 };
